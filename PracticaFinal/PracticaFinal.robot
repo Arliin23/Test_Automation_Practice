@@ -34,5 +34,6 @@ APP01 Verificar que la previsualización está funcionando correctamente a trav�
     \   Wait Until Element Is Visible   xpath=//*[@id="product"]/div/div/div[2]/h1     
     \   ${TitleModal}   Get Text    xpath=//*[@id="product"]/div/div/div[2]/h1     
     \   Should Be Equal As Strings      ${TitleHomePage}     ${TitleModal}
+    \   Unselect Frame
     \   Click Element   xpath=//*[@id="index"]/div[2]/div/div/a
     Close Browser
