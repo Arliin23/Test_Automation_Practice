@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot rpa="false" generated="20200427 09:58:45.626" generator="Robot 3.1.2 (Python 2.7.17 on win32)">
-<suite source="D:\Arianna\OneDrive - Universidad APEC - Academico\Curso Tester\Udemy\Robot Framework\PracticaFinal\PracticaFinal.robot" id="s1" name="PracticaFinal">
+<robot rpa="false" generated="20200427 10:48:15.813" generator="Robot 3.1.2 (Python 2.7.17 on win32)">
+<suite source="D:\Arianna\OneDrive - Universidad APEC - Academico\Curso Tester\Udemy\Robot Framework\PracticaFinal\PracticaFinal\PracticaFinal.robot" id="s1" name="PracticaFinal">
 <test id="s1-t1" name="APP01 Verificar que la previsualización está funcionando correctamente a través del icono del ojo">
 <kw name="Open browser and Wait">
 <kw name="Open Browser" library="SeleniumLibrary">
@@ -9,24 +9,24 @@
 <arg>${url}</arg>
 <arg>${navegador}</arg>
 </arguments>
-<msg timestamp="20200427 09:58:45.853" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
-<status status="PASS" endtime="20200427 09:58:54.441" starttime="20200427 09:58:45.853"></status>
+<msg timestamp="20200427 10:48:16.056" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com/index.php'.</msg>
+<status status="PASS" endtime="20200427 10:48:25.682" starttime="20200427 10:48:16.056"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
 <arguments>
 <arg>xpath=//*[@id="header_logo"]/a/img</arg>
 </arguments>
-<status status="PASS" endtime="20200427 09:58:54.503" starttime="20200427 09:58:54.441"></status>
+<status status="PASS" endtime="20200427 10:48:25.712" starttime="20200427 10:48:25.682"></status>
 </kw>
-<status status="PASS" endtime="20200427 09:58:54.503" starttime="20200427 09:58:45.852"></status>
+<status status="PASS" endtime="20200427 10:48:25.712" starttime="20200427 10:48:16.055"></status>
 </kw>
 <kw name="Set Focus To Element" library="SeleniumLibrary">
 <doc>Sets the focus to the element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath=//*[@id="home-page-tabs"]/li[1]/a</arg>
 </arguments>
-<status status="PASS" endtime="20200427 09:58:54.529" starttime="20200427 09:58:54.503"></status>
+<status status="PASS" endtime="20200427 10:48:25.740" starttime="20200427 10:48:25.713"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
@@ -42,27 +42,12 @@
 <arg>1024</arg>
 <arg>1366</arg>
 </arguments>
-<status status="PASS" endtime="20200427 09:58:58.678" starttime="20200427 09:58:54.534"></status>
+<status status="PASS" endtime="20200427 10:48:29.875" starttime="20200427 10:48:25.741"></status>
 </kw>
-<status status="PASS" endtime="20200427 09:58:58.678" starttime="20200427 09:58:54.530"></status>
+<status status="PASS" endtime="20200427 10:48:29.875" starttime="20200427 10:48:25.740"></status>
 </kw>
 <kw type="for" name="${contenedor} IN [ @{Contenedores} ]">
 <kw type="foritem" name="${contenedor} = //*[@id=&quot;homefeatured&quot;]/li[1]/div/div[1]/div/div[1]/a">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath=${contenedor}</arg>
-</arguments>
-<msg timestamp="20200427 09:58:58.679" level="INFO">Clicking element 'xpath=//*[@id="homefeatured"]/li[1]/div/div[1]/div/div[1]/a'.</msg>
-<status status="PASS" endtime="20200427 09:58:58.824" starttime="20200427 09:58:58.679"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>xpath=//*[@id="index"]/div[2]/div/div/a</arg>
-</arguments>
-<status status="PASS" endtime="20200427 09:59:00.977" starttime="20200427 09:58:58.824"></status>
-</kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <doc>Returns the text value of the element identified by ``locator``.</doc>
 <arguments>
@@ -71,23 +56,38 @@
 <assign>
 <var>${TitleHomePage}</var>
 </assign>
-<msg timestamp="20200427 09:59:01.004" level="INFO">${TitleHomePage} = </msg>
-<status status="PASS" endtime="20200427 09:59:01.004" starttime="20200427 09:59:00.977"></status>
+<msg timestamp="20200427 10:48:29.908" level="INFO">${TitleHomePage} = Faded Short Sleeve T-shirts</msg>
+<status status="PASS" endtime="20200427 10:48:29.908" starttime="20200427 10:48:29.876"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=${contenedor}</arg>
+</arguments>
+<msg timestamp="20200427 10:48:29.909" level="INFO">Clicking element 'xpath=//*[@id="homefeatured"]/li[1]/div/div[1]/div/div[1]/a'.</msg>
+<status status="PASS" endtime="20200427 10:48:30.037" starttime="20200427 10:48:29.908"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//*[@id="index"]/div[2]/div/div/a</arg>
+</arguments>
+<status status="PASS" endtime="20200427 10:48:31.838" starttime="20200427 10:48:30.038"></status>
 </kw>
 <kw name="Select Frame" library="SeleniumLibrary">
 <doc>Sets frame identified by ``locator`` as the current frame.</doc>
 <arguments>
 <arg>xpath=//div[@class='fancybox-inner']/iframe</arg>
 </arguments>
-<msg timestamp="20200427 09:59:01.005" level="INFO">Selecting frame 'xpath=//div[@class='fancybox-inner']/iframe'.</msg>
-<status status="PASS" endtime="20200427 09:59:01.037" starttime="20200427 09:59:01.004"></status>
+<msg timestamp="20200427 10:48:31.839" level="INFO">Selecting frame 'xpath=//div[@class='fancybox-inner']/iframe'.</msg>
+<status status="PASS" endtime="20200427 10:48:31.875" starttime="20200427 10:48:31.838"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
 <arguments>
 <arg>xpath=//*[@id="product"]/div/div/div[2]/h1</arg>
 </arguments>
-<status status="PASS" endtime="20200427 09:59:01.058" starttime="20200427 09:59:01.037"></status>
+<status status="PASS" endtime="20200427 10:48:31.898" starttime="20200427 10:48:31.876"></status>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <doc>Returns the text value of the element identified by ``locator``.</doc>
@@ -97,25 +97,38 @@
 <assign>
 <var>${TitleModal}</var>
 </assign>
-<msg timestamp="20200427 09:59:01.078" level="INFO">${TitleModal} = Faded Short Sleeve T-shirts</msg>
-<status status="PASS" endtime="20200427 09:59:01.078" starttime="20200427 09:59:01.059"></status>
+<msg timestamp="20200427 10:48:31.918" level="INFO">${TitleModal} = Faded Short Sleeve T-shirts</msg>
+<status status="PASS" endtime="20200427 10:48:31.918" starttime="20200427 10:48:31.898"></status>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to strings.</doc>
 <arguments>
-<arg>${TitleModal}</arg>
 <arg>${TitleHomePage}</arg>
+<arg>${TitleModal}</arg>
 </arguments>
-<msg timestamp="20200427 09:59:01.079" level="FAIL">Faded Short Sleeve T-shirts != </msg>
-<status status="FAIL" endtime="20200427 09:59:01.079" starttime="20200427 09:59:01.078"></status>
+<status status="PASS" endtime="20200427 10:48:31.919" starttime="20200427 10:48:31.918"></status>
 </kw>
-<status status="FAIL" endtime="20200427 09:59:01.079" starttime="20200427 09:58:58.679"></status>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="index"]/div[2]/div/div/a</arg>
+</arguments>
+<msg timestamp="20200427 10:48:31.919" level="INFO">Clicking element 'xpath=//*[@id="index"]/div[2]/div/div/a'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200427 10:48:32.310" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20200427 10:48:32.311" starttime="20200427 10:48:31.927"></status>
 </kw>
-<status status="FAIL" endtime="20200427 09:59:01.079" starttime="20200427 09:58:58.679"></status>
+<msg timestamp="20200427 10:48:32.312" level="FAIL">Element with locator 'xpath=//*[@id="index"]/div[2]/div/div/a' not found.</msg>
+<status status="FAIL" endtime="20200427 10:48:32.313" starttime="20200427 10:48:31.919"></status>
 </kw>
-<status status="FAIL" endtime="20200427 09:59:01.080" critical="yes" starttime="20200427 09:58:45.851">Faded Short Sleeve T-shirts != </status>
+<status status="FAIL" endtime="20200427 10:48:32.313" starttime="20200427 10:48:29.876"></status>
+</kw>
+<status status="FAIL" endtime="20200427 10:48:32.313" starttime="20200427 10:48:29.876"></status>
+</kw>
+<status status="FAIL" endtime="20200427 10:48:32.314" critical="yes" starttime="20200427 10:48:16.054">Element with locator 'xpath=//*[@id="index"]/div[2]/div/div/a' not found.</status>
 </test>
-<status status="FAIL" endtime="20200427 09:59:01.084" starttime="20200427 09:58:45.629"></status>
+<status status="FAIL" endtime="20200427 10:48:32.318" starttime="20200427 10:48:15.816"></status>
 </suite>
 <statistics>
 <total>

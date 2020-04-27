@@ -27,12 +27,12 @@ APP01 Verificar que la previsualización está funcionando correctamente a trav�
     Run Keyword If  '${Result}' != 'PASS'   Set Window Size     1024    1366
     :FOR    ${contenedor}   IN      @{Contenedores}
 
+    \   ${TitleHomePage}    Get Text    xpath=//*[@id="homefeatured"]/li[${contenedor}]/div/div[2]/h5/a
     \   Click Element   xpath=${contenedor} 
-    \   Wait Until Element Is Visible   xpath=//*[@id="index"]/div[2]/div/div/a 
-    \   ${TitleHomePage}    Get Text    xpath=//*[@id="homefeatured"]/li[${contenedor}]/div/div[2]/h5/a  
-    \   Select Frame        xpath=//div[@class='fancybox-inner']/iframe  
+    \   Wait Until Element Is Visible   xpath=//*[@id="index"]/div[2]/div/div/a   
+    \   Select Frame        xpath=//div[@class='fancybox-inner']/iframe 
     \   Wait Until Element Is Visible   xpath=//*[@id="product"]/div/div/div[2]/h1     
     \   ${TitleModal}   Get Text    xpath=//*[@id="product"]/div/div/div[2]/h1     
-    \   Should Be Equal As Strings      ${TitleModal}   ${TitleHomePage}
+    \   Should Be Equal As Strings      ${TitleHomePage}     ${TitleModal}
     \   Click Element   xpath=//*[@id="index"]/div[2]/div/div/a
     Close Browser
