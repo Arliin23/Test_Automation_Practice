@@ -9,7 +9,7 @@ ${url}      http://automationpractice.com/index.php
 ${eyes}     xpath=//*[@id="homefeatured"]/li[1]/div/div[1]/div/div[1]/a/i
 ${Result}   Page Should Contain Element     ${eyes}
 @{ContenedoresQuickViewMobile}     //*[@id="homefeatured"]/li[1]/div/div[1]/div/div[1]/a    //*[@id="homefeatured"]/li[2]/div/div[1]/div/div[1]/a     //*[@id="homefeatured"]/li[3]/div/div[1]/div/div[1]/a    //*[@id="homefeatured"]/li[4]/div/div[1]/div/div[1]/a   //*[@id="homefeatured"]/li[5]/div/div[1]/div/div[1]/a   //*[@id="homefeatured"]/li[6]/div/div[1]/div/div[1]/a   //*[@id="homefeatured"]/li[7]/div/div[1]/div/div[1]/a              
-@{ContenedoresQuickView}    //*[@id="homefeatured"]/li[1]/div/div[1]/div/a[2]   //*[@id="homefeatured"]/li[2]/div/div[1]/div/a[2]   //*[@id="homefeatured"]/li[3]/div/div[1]/div/a[2]   //*[@id="homefeatured"]/li[4]/div/div[1]/div/a[2]   //*[@id="homefeatured"]/li[5]/div/div[1]/div/a[2]   //*[@id="homefeatured"]/li[6]/div/div[1]/div/a[2]   //*[@id="homefeatured"]/li[7]/div/div[1]/div/a[2]
+@{ContenedoresQuickView}    //*[@id="homefeatured"]/li[1]/div/div[1]/div/a[2]/span   //*[@id="homefeatured"]/li[2]/div/div[1]/div/a[2]/span   //*[@id="homefeatured"]/li[3]/div/div[1]/div/a[2]/span   //*[@id="homefeatured"]/li[4]/div/div[1]/div/a[2]/span   //*[@id="homefeatured"]/li[5]/div/div[1]/div/a[2]/span   //*[@id="homefeatured"]/li[6]/div/div[1]/div/a[2]/span   //*[@id="homefeatured"]/li[7]/div/div[1]/div/a[2]/span
 ${contador}     1
 
 ***Keywords***
@@ -49,6 +49,7 @@ APP02 Verificar que la previsualización está funcionando correctamente a trav�
     :FOR    ${contenedor}   IN      @{ContenedoresQuickView}
     \   Wait Until Element Is Visible   xpath=//*[@id="homefeatured"]/li[${contador}]/div/div[2]/h5/a
     \   ${TitleHomePage}    Get Text    xpath=//*[@id="homefeatured"]/li[${contador}]/div/div[2]/h5/a
+    \   Mouse Over  xpath=//*[@id="homefeatured"]/li[${contador}]/div/div[1]/div/a[1]/img      
     \   Wait Until Element Is Visible    xpath=${contenedor}     60
     \   Click Element   xpath=${contenedor} 
     \   Wait Until Element Is Visible   xpath=//*[@id="index"]/div[2]/div/div/a     60   
@@ -60,3 +61,4 @@ APP02 Verificar que la previsualización está funcionando correctamente a trav�
     \   Unselect Frame
     \   Click Element   xpath=//*[@id="index"]/div[2]/div/div/a
     Close Browser
+
