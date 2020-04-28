@@ -45,7 +45,7 @@ APP02 Verificar que la previsualización está funcionando correctamente a trav�
 
     Open browser and Wait
     Set Focus to Element    xpath=//*[@id="home-page-tabs"]/li[1]/a
-    Run Keyword If  '${Result}' == 'PASS'   Maximize Browser Window   
+    Set Window Size     1920    1080   
     :FOR    ${contenedor}   IN      @{ContenedoresQuickView}
     \   Wait Until Element Is Visible   xpath=//*[@id="homefeatured"]/li[${contador}]/div/div[2]/h5/a
     \   ${TitleHomePage}    Get Text    xpath=//*[@id="homefeatured"]/li[${contador}]/div/div[2]/h5/a
