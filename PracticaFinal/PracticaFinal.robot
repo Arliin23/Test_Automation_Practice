@@ -9,7 +9,7 @@ ${url}      http://automationpractice.com/index.php
 ${eyes}     xpath=//*[@id="homefeatured"]/li[1]/div/div[1]/div/div[1]/a/i
 ${Result}   Page Should Contain Element     ${eyes}
 @{Contenedores}     //*[@id="homefeatured"]/li[1]/div/div[1]/div/div[1]/a    //*[@id="homefeatured"]/li[2]/div/div[1]/div/div[1]/a     //*[@id="homefeatured"]/li[3]/div/div[1]/div/div[1]/a    //*[@id="homefeatured"]/li[4]/div/div[1]/div/div[1]/a   //*[@id="homefeatured"]/li[5]/div/div[1]/div/div[1]/a   //*[@id="homefeatured"]/li[6]/div/div[1]/div/div[1]/a   //*[@id="homefeatured"]/li[7]/div/div[1]/div/div[1]/a              
-
+${contador}     1
 
 ***Keywords***
 
@@ -26,14 +26,16 @@ APP01 Verificar que la previsualización está funcionando correctamente a trav�
     Set Focus to Element    xpath=//*[@id="home-page-tabs"]/li[1]/a
     Run Keyword If  '${Result}' != 'PASS'   Set Window Size     1024    1366
     :FOR    ${contenedor}   IN      @{Contenedores}
-    \   Wait Until Element Contains   xpath=//*[@id="homefeatured"]/li[${contenedor}]/div/div[2]/h5/a
-    \   ${TitleHomePage}    Get Text    xpath=//*[@id="homefeatured"]/li[${contenedor}]/div/div[2]/h5/a
+    \   Wait Until Element Is Visible   xpath=//*[@id="homefeatured"]/li[${contador}]/div/div[2]/h5/a
+    \   ${TitleHomePage}    Get Text    xpath=//*[@id="homefeatured"]/li[${contador}]/div/div[2]/h5/a
     \   Click Element   xpath=${contenedor} 
     \   Wait Until Element Is Visible   xpath=//*[@id="index"]/div[2]/div/div/a     60   
     \   Select Frame        xpath=//div[@class='fancybox-inner']/iframe 
     \   Wait Until Element Is Visible   xpath=//*[@id="product"]/div/div/div[2]/h1     
     \   ${TitleModal}   Get Text    xpath=//*[@id="product"]/div/div/div[2]/h1     
     \   Should Be Equal As Strings      ${TitleHomePage}     ${TitleModal}
+    \   ${contador}     Set Variable   ${contador}+1
     \   Unselect Frame
     \   Click Element   xpath=//*[@id="index"]/div[2]/div/div/a
     Close Browser
+
